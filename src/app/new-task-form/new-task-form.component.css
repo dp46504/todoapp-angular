@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+
+.newTaskFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  width: clamp(300px, 50%, 700px);
+  margin: 0 auto 2rem auto;
+  gap: 2rem;
+}
+
+input,
+button {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+input,
+textarea,
+.taskPriority {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: center;
+  border: none;
+  border-bottom: 0.2rem solid rgb(191, 0, 255);
+  outline: none;
+  transition: all 500ms;
+  font-size: 1.2rem;
+  color: white;
+  background: transparent;
+}
+input::placeholder,
+textarea::placeholder {
+  color: white;
+}
+
+textarea {
+  border-top: 0.1rem solid rgba(0, 0, 0, 0.263);
+  border-left: 0.1rem solid rgba(0, 0, 0, 0.263);
+  border-right: 0.1rem solid rgba(0, 0, 0, 0.263);
+}
+
+.priorityRack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.priorityOption {
+  display: flex;
+}
+
+.taskpriority::after {
+  color: black;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  transform: scale(1.05);
+}
+
+.taskPriority {
+  width: 100%;
+  height: 4rem;
+  padding: 1rem 0;
+}
+
+input:hover,
+textarea:hover,
+.taskPriority:hover {
+  border-bottom: 0.2rem solid rgb(69, 1, 255);
+}
+
+.taskDeleteButton {
+  border: none;
+  background: linear-gradient(-45deg, rgb(55, 0, 103), rgb(191, 0, 255));
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  transition: background-position 500ms;
+  padding: 1rem;
+  letter-spacing: 0.05rem;
+  font-weight: bold;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.taskDeleteButton:hover {
+  background-position: 100% 0%;
+}

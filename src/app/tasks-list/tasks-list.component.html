@@ -1,0 +1,14 @@
+<div class="mainContainer">
+  <div class="buttons">
+  <button class="sortOrder" (click)="reverseSort()">{{getSortDirectionIndicator()}}</button>
+  <button class="sortOnText"  (click)="toggleTextSort()">{{getSortTypeText()}}</button>
+  <button class="lowFilter" [ngClass]="getFilterClass(0)" (click)="toggleFilter(0)">Low</button>
+  <button class="normalFilter" [ngClass]="getFilterClass(1)" (click)="toggleFilter(1)">Normal</button>
+  <button class="highFilter" [ngClass]="getFilterClass(2)" (click)="toggleFilter(2)">High</button>
+</div>
+  <new-task-form class="form" (newTaskAdded)="refreshTasks()"/>
+
+<ul class="list">
+  <app-task [filter]="filter" (taskDeleted)="refreshTasks()" *ngFor="let task of tasks" [task]="task" />
+</ul>
+</div>

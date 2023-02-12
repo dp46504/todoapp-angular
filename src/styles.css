@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  margin: 0;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  background: black;
+  /* background: linear-gradient(
+    -45deg,
+    rgba(55, 0, 103, 1),
+    rgba(2, 0, 147, 1),
+    rgba(147, 0, 0, 1),
+    rgba(255, 0, 0, 1)
+  );
+  background-size: 400% 400%;
+  background-position: 0% 50%;
+  animation: bgAnim 4s ease-in-out both infinite alternate; */
+}
+
+@keyframes bgAnim {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 50% 100%;
+  }
+}

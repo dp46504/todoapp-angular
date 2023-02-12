@@ -1,0 +1,31 @@
+<div
+  class="taskContainerBorderGradient"
+  *ngIf="filter[task.priority]"
+  [ngClass]="getBorderClass()"
+>
+  <li class="taskContainer">
+    <div class="taskName">{{ task.name }}</div>
+    <div class="taskDate">
+      {{ task.createdAt | date : "dd.MM.yy hh:mm" }}
+
+      <div
+        class="priorityChip"
+        [ngSwitch]="task.priority"
+        [ngClass]="getChipClass()"
+      >
+        <div class="taskPriority" *ngSwitchCase="0">Low</div>
+        <div class="taskPriority" *ngSwitchCase="1">Normal</div>
+        <div class="taskPriority" *ngSwitchCase="2">High</div>
+      </div>
+    </div>
+    <div class="taskDescription">{{ task.description }}</div>
+
+    <button
+      class="taskDeleteButton"
+      [ngClass]="getButtonClass()"
+      (click)="deleteTask()"
+    >
+      Delete
+    </button>
+  </li>
+</div>

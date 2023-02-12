@@ -1,0 +1,67 @@
+<div class="newTaskFormContainer">
+  <input
+    required
+    placeholder="Task name"
+    class="taskName"
+    type="text"
+    [(ngModel)]="task.name"
+  />
+  <textarea
+    required
+    rows="10"
+    cols="50"
+    placeholder="Task description"
+    class="taskDescription"
+    type="text"
+    [(ngModel)]="task.description"
+  ></textarea>
+
+  <!-- <select
+    class="taskPriority"
+    name="priority"
+    id="priority-select"
+    [(ngModel)]="task.priority"
+  >
+    <option value="2">High priority</option>
+    <option value="1">Normal priority</option>
+    <option value="0">Low priority</option>
+  </select> -->
+
+  <div class="priorityRack">
+    <div class="priorityOption">
+      <label htmlfor="highPriority">High</label>
+      <input
+        id="highPriority"
+        name="priority"
+        [(ngModel)]="task.priority"
+        type="radio"
+        [value]="2"
+      />
+    </div>
+
+    <div class="priorityOption">
+      <label htmlfor="normalPriority">Normal</label>
+      <input
+        [defaultChecked]="true"
+        id="normalPriority"
+        name="priority"
+        [(ngModel)]="task.priority"
+        type="radio"
+        [value]="1"
+      />
+    </div>
+
+    <div class="priorityOption">
+      <label htmlfor="lowPriority">Low</label>
+      <input
+        id="lowPriority"
+        name="priority"
+        [(ngModel)]="task.priority"
+        type="radio"
+        [value]="0"
+      />
+    </div>
+  </div>
+
+  <button class="taskDeleteButton" (click)="addTask()">Add Task</button>
+</div>
